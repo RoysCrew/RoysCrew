@@ -25,12 +25,22 @@ const sides = ["Potato salad", "Cole slaw", "Pinto beans", "Onion rings", "Frenc
 
 <section class="menu-section" id="menu-details">
 	<div class="menu-heading"><div><p class="eyebrow">The full spread</p><h2 class="section-heading">Made for<br /><em>big appetites.</em></h2></div><p>Explore our menu of mesquite-smoked barbecue, comfort food, sides, and sweets. Call or order online to confirm today's availability.</p></div>
+	<div class="meal-highlights" role="group" aria-label="Popular meal options">
+		<article class="meal-highlight"><p class="meal-highlight-label">The classics</p><h3>BBQ Plates</h3><p>Served with a roll or cornbread.</p></article>
+		<article class="meal-highlight"><p class="meal-highlight-label">One meat</p><h3>Summit Single</h3><p>1 meat · 2 sides</p><strong>$20</strong></article>
+		<article class="meal-highlight"><p class="meal-highlight-label">Two meats</p><h3>Cascade Combo</h3><p>2 meats · 2 sides</p><strong>$24</strong></article>
+		<article class="meal-highlight"><p class="meal-highlight-label">Three meats</p><h3>Teller Trio</h3><p>3 meats · 2 sides</p><strong>$28</strong></article>
+		<article class="meal-highlight"><p class="meal-highlight-label">No age limit</p><h3>Kids Meal</h3><p>1 meat · 2 sides in kid-sized portions · small drink · roll or cornbread</p><strong>$10</strong></article>
+	</div>
 	<div class="menu-categories">
-		<details class="menu-category"><summary><h3>Sandwiches, plates &amp; favorites</h3><b>+</b></summary><div class="menu-category-content"><div class="menu-subitem plates"><span>BBQ Plates</span><small>Served with a roll or cornbread<br />Summit Single: 1 meat &amp; 2 sides $20<br />Cascade Combo: 2 meats &amp; 2 sides $24<br />Teller Trio: 3 meats &amp; 2 sides $28</small></div>{mains.map((item) => <article class="menu-item"><div><h4>{item[0]}</h4><p>{item[2]}</p></div><strong>{item[1]}</strong></article>)}{specialties.map((item) => <article class="menu-item"><div><h4>{item[0]}</h4><p>{item[2]}</p></div><strong>{item[1]}</strong></article>)}</div></details>
+		<details class="menu-category"><summary><h3>Sandwiches, plates &amp; favorites</h3><b>+</b></summary><div class="menu-category-content">{mains.map((item) => <article class="menu-item"><div><h4>{item[0]}</h4><p>{item[2]}</p></div><strong>{item[1]}</strong></article>)}{specialties.map((item) => <article class="menu-item"><div><h4>{item[0]}</h4><p>{item[2]}</p></div><strong>{item[1]}</strong></article>)}</div></details>
 		<details class="menu-category"><summary><h3>Mesquite-smoked meats</h3><b>+</b></summary><div class="menu-category-content"><ul class="meat-list">{smokedMeats.map((meat) => <li>{meat}</li>)}</ul><div class="menu-subitem pricing"><span>By the pound</span><small><b>Brisket</b><br />¼ lb $8 · ½ lb $15 · 1 lb $29<br /><b>Pork spare ribs</b><br />½ rack $17 · full rack $30<br /><b>Hot links, smoked sausage, pulled pork, ham, chicken, turkey</b><br />¼ lb $6 · ½ lb $11 · 1 lb $22</small></div><div class="menu-subitem"><span>BBQ sauce</span><small>Pint $6 · Quart $9</small></div></div></details>
 		<details class="menu-category"><summary><h3>Sides &amp; sweets</h3><b>+</b></summary><div class="menu-category-content"><ul class="side-list">{sides.map((side) => <li>{side}</li>)}</ul><div class="menu-subitem"><span>Sides</span><b>$3.50</b><small>Pint $7 · Quart $14<br />Side salad or baked potato: substitute for a side +$3, or add on for $6</small></div><div class="menu-subitem"><span>Desserts</span><small>Fruit cobbler $6 (ask cashier for flavor)<br />Homemade vanilla ice cream $4<br />Special ice cream $5 (ask cashier)<br />Fresh huge cinnamon roll $8</small></div></div></details>
 	</div>
-	<div class="menu-bottom"><span>Kids meals $10 · No age limit · 1 meat, 2 sides, small drink, and roll or cornbread</span><span>Ask about catering</span><span>Milk, eggs, crustacean, shellfish, tree nuts, wheat, peanuts, soy, and sesame may be used</span></div>
+	<div class="menu-footer">
+		<a class="menu-footer-catering" href="#catering">Ask about catering <span aria-hidden="true">↗</span></a>
+		<p class="menu-footer-allergens">Milk, eggs, crustaceans, shellfish, tree nuts, wheat, peanuts, soy, and sesame may be used in our kitchen.</p>
+	</div>
 </section>
 
 <style>
@@ -38,6 +48,12 @@ const sides = ["Potato salad", "Cole slaw", "Pinto beans", "Onion rings", "Frenc
 	.menu-heading { align-items: end; display: grid; gap: 4rem; grid-template-columns: 1fr 0.7fr; margin: 0 auto 4.5rem; max-width: 100rem; }
 	.menu-heading .section-heading { margin-top: 1.2rem; }
 	.menu-heading > p { color: rgba(244, 235, 221, 0.68); font-size: 0.92rem; line-height: 1.75; margin: 0; max-width: 27rem; }
+	.meal-highlights { display: grid; gap: 1px; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0 auto 4rem; max-width: 100rem; background: var(--line); border: 1px solid var(--line); }
+	.meal-highlight { background: var(--wood); min-width: 0; padding: 1.4rem 1.25rem; position: relative; }
+	.meal-highlight-label { color: var(--brass); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; margin: 0 0 0.55rem; text-transform: uppercase; }
+	.meal-highlight h3 { font-family: var(--display); font-size: 1.05rem; line-height: 1.2; margin: 0 0 0.5rem; }
+	.meal-highlight > p:not(.meal-highlight-label) { color: rgba(244, 235, 221, 0.62); font-size: 0.72rem; line-height: 1.5; margin: 0; }
+	.meal-highlight strong { color: var(--brass); display: block; font-family: var(--display); font-size: 1rem; margin-top: 0.8rem; }
 	.menu-categories { border-top: 1px solid var(--line); margin: 0 auto; max-width: 100rem; }
 	.menu-category { border-bottom: 1px solid var(--line); }
 	.menu-category summary { align-items: center; cursor: pointer; display: flex; gap: 1rem; justify-content: space-between; list-style: none; padding: 1.5rem 0; }
@@ -62,8 +78,10 @@ const sides = ["Potato salad", "Cole slaw", "Pinto beans", "Onion rings", "Frenc
 	.meat-list, .side-list { columns: 2; list-style: none; margin: 0 0 1rem; padding: 0; }
 	.meat-list li, .side-list li { color: rgba(244, 235, 221, 0.8); font-family: var(--display); font-size: 0.92rem; padding: 0.3rem 0; }
 	.meat-list li::before, .side-list li::before { color: var(--ember); content: "·"; margin-right: 0.45rem; }
-	.menu-bottom { border-top: 1px solid var(--line); color: rgba(244, 235, 221, 0.6); display: flex; font-size: 0.67rem; gap: 2rem; justify-content: space-between; letter-spacing: 0.08em; margin: 4rem auto 0; max-width: 100rem; padding-top: 1.3rem; text-transform: uppercase; }
-	.menu-bottom span:nth-child(2) { color: var(--brass); font-family: var(--display); font-size: 1.2rem; letter-spacing: 0; text-transform: none; }
-	@media (max-width: 900px) { .menu-section { padding: 6rem 4vw; } .menu-heading { gap: 2rem; grid-template-columns: 1fr 1fr; } .menu-category-content { grid-template-columns: repeat(2, 1fr); padding-inline: 1rem; } }
-	@media (max-width: 720px) { .menu-section { padding: 4.5rem 1.25rem; } .menu-heading { display: block; margin-bottom: 2.5rem; } .menu-heading > p { margin-top: 1.5rem; } .menu-category summary { min-height: 4.25rem; } .menu-category summary h3 { font-size: clamp(1.15rem, 5.8vw, 1.4rem); line-height: 1.15; max-width: 15rem; } .menu-category-content { display: block; padding: 0 0 1.5rem; } .menu-item { gap: 0.75rem; } .menu-item h4 { font-size: 0.9rem; line-height: 1.25; } .menu-item p, .menu-subitem small, .menu-note { font-size: 0.72rem; } .menu-item strong { font-size: 0.82rem; } .menu-bottom { align-items: start; flex-direction: column; gap: 1rem; margin-top: 2.5rem; } }
+	.menu-footer { align-items: start; border-top: 1px solid var(--line); color: rgba(244, 235, 221, 0.6); display: flex; font-size: 0.67rem; gap: 2rem; justify-content: space-between; letter-spacing: 0.08em; margin: 4rem auto 0; max-width: 100rem; padding-top: 1.3rem; text-transform: uppercase; }
+	.menu-footer-catering { color: var(--brass); flex: 0 0 auto; }
+	.menu-footer-catering span { font-size: 0.8rem; margin-left: 0.3rem; }
+	.menu-footer-allergens { line-height: 1.5; margin: 0; max-width: 38rem; text-align: right; }
+	@media (max-width: 900px) { .menu-section { padding: 6rem 4vw; } .menu-heading { gap: 2rem; grid-template-columns: 1fr 1fr; } .meal-highlights { grid-template-columns: repeat(3, minmax(0, 1fr)); } .meal-highlight:last-child { grid-column: span 2; } .menu-category-content { grid-template-columns: repeat(2, 1fr); padding-inline: 1rem; } }
+	@media (max-width: 720px) { .menu-section { padding: 4.5rem 1.25rem; } .menu-heading { display: block; margin-bottom: 2.5rem; } .menu-heading > p { margin-top: 1.5rem; } .meal-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 2.5rem; } .meal-highlight { padding: 1.1rem 1rem; } .meal-highlight:last-child { grid-column: 1 / -1; } .menu-category summary { min-height: 4.25rem; } .menu-category summary h3 { font-size: clamp(1.15rem, 5.8vw, 1.4rem); line-height: 1.15; max-width: 15rem; } .menu-category-content { display: block; padding: 0 0 1.5rem; } .menu-item { gap: 0.75rem; } .menu-item h4 { font-size: 0.9rem; line-height: 1.25; } .menu-item p, .menu-subitem small, .menu-note { font-size: 0.72rem; } .menu-item strong { font-size: 0.82rem; } .menu-footer { flex-direction: column; gap: 0.8rem; margin-top: 2.5rem; padding-top: 1.2rem; } .menu-footer-allergens { text-align: left; } }
 </style>

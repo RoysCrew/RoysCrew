@@ -3,7 +3,7 @@ const dishes = [
 	{ name: "Brisket", detail: "Low & slow", image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1000&q=85" },
 	{ name: "Ribs", detail: "Fall-off-the-bone", image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85" },
 	{ name: "Pulled pork", detail: "Hand-pulled", image: "https://images.pexels.com/photos/36850055/pexels-photo-36850055.jpeg?auto=compress&cs=tinysrgb&w=1000" },
-	{ name: "Fried chicken", detail: "Crispy & golden", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1000&q=85" },
+	{ name: "Chicken Fried Steak", detail: "Hand-battered & hearty", image: "https://images.pexels.com/photos/40011111/pexels-photo-40011111/free-photo-of-southern-comfort-food-plate-at-houston-diner.jpeg?auto=compress&dpr=1&h=750&w=1260" },
 ];
 ---
 
@@ -20,10 +20,8 @@ const dishes = [
 	.food-intro-copy p { margin: 0 0 1.5rem; }
 	.text-link { border-bottom: 1px solid var(--ember); color: var(--ink); display: inline-flex; font-size: 0.7rem; font-weight: 700; gap: 0.8rem; letter-spacing: 0.13em; padding-bottom: 0.4rem; text-transform: uppercase; }
 	.text-link span { color: var(--ember); font-size: 1rem; line-height: 0.6; }
-	.food-grid { display: grid; gap: 1rem; grid-auto-rows: 27rem; grid-template-columns: repeat(6, minmax(0, 1fr)); margin: 0 auto; max-width: 100rem; }
+	.food-grid { display: grid; gap: 1rem; grid-auto-rows: 27rem; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0 auto; max-width: 100rem; }
 	.food-card { min-height: 0; overflow: hidden; position: relative; }
-	.food-card { grid-column: span 2; }
-	.food-card:nth-child(4), .food-card:nth-child(5) { grid-column: span 3; }
 	.food-card img { height: 100%; object-fit: cover; transition: transform 600ms ease; width: 100%; }
 	.food-card::after { background: linear-gradient(180deg, transparent 30%, rgba(23, 21, 19, 0.8)); content: ""; inset: 0; position: absolute; }
 	.food-card:hover img { transform: scale(1.045); }
@@ -31,6 +29,6 @@ const dishes = [
 	.food-card-overlay span { color: var(--brass); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
 	.food-card-overlay h3 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.5rem); margin: 0.3rem 0 0; text-transform: capitalize; }
 	.food-card-overlay b { bottom: 0.25rem; font-size: 1.4rem; position: absolute; right: 0; }
-	@media (max-width: 900px) and (min-width: 721px) { .food-section { padding: 6rem 4vw; } .food-intro { gap: 2rem; grid-template-columns: 1fr 1fr; } .food-grid { grid-auto-rows: 24rem; grid-template-columns: repeat(4, minmax(0, 1fr)); } .food-card { grid-column: span 2; } .food-card:nth-child(5) { grid-column: 1 / -1; } }
-	@media (max-width: 720px) { .food-section { padding: 5rem 1.25rem; } .food-intro { display: block; margin-bottom: 2.5rem; } .food-intro-copy { margin-top: 2rem; } .food-grid { grid-auto-rows: 18rem; grid-template-columns: 1fr; } .food-card, .food-card:nth-child(4), .food-card:nth-child(5) { grid-column: 1; } }
+	@media (max-width: 900px) and (min-width: 721px) { .food-section { padding: 6rem 4vw; } .food-intro { gap: 2rem; grid-template-columns: 1fr 1fr; } .food-grid { grid-auto-rows: 24rem; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+	@media (max-width: 720px) { .food-section { padding: 5rem 1.25rem; } .food-intro { display: block; margin-bottom: 2.5rem; } .food-intro-copy { margin-top: 2rem; } .food-grid { grid-auto-rows: 18rem; grid-template-columns: 1fr; } }
 </style>

@@ -3,7 +3,7 @@
 
 <section class="catering-section" id="catering">
 	<div><p class="eyebrow">Catering</p><h2 class="section-heading">Bring Roy's<br /><em>to the party.</em></h2></div>
-	<div class="catering-copy"><p>Planning a gathering? Ask about catering for your next event. We can bring smoked meats and homemade sides to the table.</p><a class="button button--ember" href="mailto:royscrewbbq@gmail.com?subject=Catering%20inquiry">Ask about catering</a></div>
+	<div class="catering-copy"><p>Our catering menu has three main options:</p><ul class="catering-options"><li>3-Meat</li><li>BBQ Slider</li><li>Loaded Potato</li></ul><p>We'd love to get in contact with you about catering for your event. Call or email us and we can talk through the options.</p><div class="catering-actions"><a class="button button--ember" href="tel:+17193236333">Call 719-323-6333</a><a class="button button--outline" href="mailto:royscrewbbq@gmail.com?subject=Catering%20inquiry">Email Roy's Crew</a></div></div>
 </section>
 
 <style>
@@ -11,5 +11,8 @@
 	.catering-section .section-heading { margin-top: 1rem; }
 	.catering-copy { align-self: end; max-width: 25rem; }
 	.catering-copy p { color: rgba(244, 235, 221, 0.7); font-size: 1rem; line-height: 1.8; margin: 0 0 2rem; }
+	.catering-options { color: var(--cream); font-family: var(--display); font-size: 1.15rem; line-height: 1.8; list-style: none; margin: -0.75rem 0 2rem; padding: 0; }
+	.catering-options li::before { color: var(--brass); content: "·"; margin-right: 0.65rem; }
+	.catering-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 	@media (max-width: 720px) { .catering-section { display: block; padding: 5rem 1.25rem; } .catering-copy { margin-top: 2rem; } }
 </style>
