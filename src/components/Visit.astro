@@ -1,0 +1,24 @@
+---
+---
+
+<section class="visit-section" id="visit">
+	<div class="visit-heading"><p class="eyebrow">Woodland Park</p><h2 class="section-heading">Find us<br /><em>in town.</em></h2><div class="map-frame"><iframe title="Map showing Roy's Crew BBQ at 720 Browning Ave" src="https://www.google.com/maps?q=720%20Browning%20Ave%2C%20Woodland%20Park%2C%20CO%2080863&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
+	<div class="visit-details"><div class="detail"><span>Address</span><strong>720 Browning Ave</strong><small>Woodland Park, CO 80863</small></div><div class="detail"><span>Hours</span><strong>Monday–Saturday · 11 AM–8 PM</strong><small>Closed Sunday</small></div><div class="detail"><span>Phone</span><strong><a href="tel:+17193236333">719-323-6333</a></strong><small><a href="mailto:royscrewbbq@gmail.com">royscrewbbq@gmail.com</a></small></div><a class="button button--dark" href="https://www.google.com/maps/search/?api=1&query=720+Browning+Ave%2C+Woodland+Park%2C+CO+80863" target="_blank" rel="noreferrer">Get directions</a></div>
+</section>
+
+<style>
+	.visit-section { background: var(--cream); color: var(--ink); display: grid; gap: 8vw; grid-template-columns: 0.9fr 1.1fr; padding: 8rem 10vw; }
+	.visit-heading .eyebrow { color: var(--ember); }
+	.visit-heading .section-heading { margin: 1.2rem 0 1.8rem; }
+	.map-frame { background: #090807; border: 1px solid var(--ember); height: 12rem; margin-top: 2rem; overflow: hidden; position: relative; }
+	.map-frame::after { background: rgba(182, 83, 42, 0.3); content: ""; inset: 0; mix-blend-mode: color; pointer-events: none; position: absolute; }
+	.map-frame iframe { border: 0; filter: invert(0.9) hue-rotate(180deg) sepia(0.2) saturate(0.8) contrast(1.3) brightness(0.72); height: 100%; width: 100%; }
+	.visit-details { border-top: 1px solid #c8bcae; }
+	.detail { border-bottom: 1px solid #c8bcae; display: grid; grid-template-columns: 0.6fr 1fr; padding: 1.35rem 0; }
+	.detail span { color: var(--ember); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+	.detail strong { font-family: var(--display); font-size: 1.1rem; font-weight: 600; }
+	.detail small { color: #766b60; grid-column: 2; margin-top: 0.35rem; }
+	.visit-details .button { margin-top: 2rem; }
+	@media (max-width: 900px) and (min-width: 721px) { .visit-section { gap: 4rem; padding: 6rem 4vw; } }
+	@media (max-width: 720px) { .visit-section { display: block; padding: 4.5rem 1.25rem; } .map-frame { height: 14rem; margin-top: 1.75rem; } .visit-details { margin-top: 2.5rem; } .detail { gap: 0.75rem; grid-template-columns: 0.75fr 1.25fr; } .detail strong { font-size: 0.98rem; line-height: 1.3; } .detail small { grid-column: 2; line-height: 1.4; } }
+</style>

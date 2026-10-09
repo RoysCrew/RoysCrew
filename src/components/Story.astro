@@ -1,0 +1,28 @@
+---
+---
+
+<section class="story-section" id="story">
+	<div class="story-main">
+		<div class="story-photo"><img src="/Logo/Roys%20Dining.jpg" alt="Dining room inside Roy's Crew BBQ" loading="lazy" /></div>
+		<div class="story-copy"><p class="eyebrow">Our story</p><h2 class="section-heading">A family<br /><em>restaurant.</em></h2><p>Roy started working in restaurants at a young age. His family eventually found their way to Colorado, bringing a love of good food and hard work with them.</p><p>Roy's Crew BBQ is now their restaurant in Woodland Park, serving smoked meats, homemade sides, and desserts.</p></div>
+	</div>
+	<details class="story-details"><summary class="button button--outline">More of our story</summary><div class="story-details-copy"><p>After four years helping other restaurants succeed in New Mexico and Texas, Roy opened his own restaurant and catering business in Hobart, Oklahoma, his parents' and grandparents' hometown. He was 20 years old. The restaurant ran for nine years and became an important part of the community.</p><p>When a highway expansion threatened the business, and the family needed to be closer to Oklahoma City for their daughter's medical treatment, Roy and his wife, Stephanie, moved with their three children. Stephanie had started working at the restaurant, and the two married after meeting there. Roy built a successful insurance agency around integrity, hard work, and personal service, but the restaurant business kept calling him back.</p><p>Roy and Stephanie had honeymooned in Estes Park in 1998 and never forgot how much they loved the Colorado mountains. During a fishing trip, Roy and their oldest son, Adam, visited Woodland Park and saw a building that felt like it could be the right place for a restaurant. It was unavailable then, but they kept looking.</p><p>At Christmas in 2020, the family returned to Woodland Park and noticed that the Smokehouse was closed. Stephanie watched the local commercial listings for several months. In May 2021, the building became available. After prayers, hurdles, course corrections, and a few plot twists, the Cassadas were able to secure it.</p><p>Today, Roy's Crew BBQ is proud to be part of the Woodland Park community. Their crew now includes eight children, and the family looks forward to working hard, serving good food, and welcoming neighbors and visitors alike.</p></div></details>
+</section>
+
+<style>
+	.story-section { background: var(--wood); padding: 4.5rem 10vw; }
+	.story-main { align-items: center; display: grid; gap: 6vw; grid-template-columns: 1fr 0.85fr; }
+	.story-photo { min-height: 23rem; position: relative; }
+	.story-photo::before { border: 1px solid var(--brass); content: ""; inset: -1.2rem 1.2rem 1.2rem -1.2rem; position: absolute; }
+	.story-photo img { height: 100%; object-fit: cover; width: 100%; }
+	.story-copy .section-heading { margin: 1.3rem 0 2rem; }
+	.story-copy > p:not(.eyebrow) { color: rgba(244, 235, 221, 0.7); font-size: 0.95rem; line-height: 1.8; max-width: 30rem; }
+	.story-details { margin: 3rem auto 0; max-width: 56rem; }
+	.story-details summary { cursor: pointer; list-style: none; margin: 0 auto; width: fit-content; }
+	.story-details summary::-webkit-details-marker { display: none; }
+	.story-details summary::after { content: "+"; font-size: 1rem; }
+	.story-details[open] summary::after { content: "−"; }
+	.story-details-copy { color: rgba(244, 235, 221, 0.7); font-size: 0.9rem; line-height: 1.8; padding-top: 1.5rem; }
+	.story-details-copy p { margin: 0 0 1.2rem; }
+	@media (max-width: 720px) { .story-section { padding: 3.5rem 1.25rem; } .story-main { display: block; } .story-photo { margin: 0 1rem 2rem 0; min-height: 18rem; } .story-copy > p:not(.eyebrow) { font-size: 0.88rem; } .story-details { margin-top: 2.25rem; } .story-details-copy { font-size: 0.88rem; } }
+</style>

@@ -1,0 +1,27 @@
+---
+---
+
+<section class="hero" id="top">
+	<div class="hero-image"><img src="/Logo/Roys%20Front%20View.jpg" alt="Front view of Roy's Crew BBQ in Woodland Park, Colorado" /></div>
+	<div class="hero-content">
+		<p class="eyebrow">Woodland Park, Colorado · Est. family-owned</p>
+		<h1>Roy's Crew<br /><span>BBQ</span></h1>
+		<p class="hero-kicker">Woodland Park barbecue.</p>
+		<p class="hero-copy">Slow-smoked barbecue, scratch-made comfort food, and a table that feels like home.</p>
+		<div class="hero-actions"><a class="button button--ember" href="https://roys-crew-bbq-woodland-park-2.cloveronline.com/menu/all" target="_blank" rel="noreferrer">Order online</a><a class="button button--outline" href="#menu">View menu</a></div>
+	</div>
+</section>
+
+<style>
+	.hero { align-items: flex-end; display: flex; min-height: min(800px, 100vh); overflow: hidden; padding: 9rem 5vw 5.5rem; position: relative; }
+	.hero::after { background: linear-gradient(90deg, rgba(23, 21, 19, 0.94) 0%, rgba(23, 21, 19, 0.76) 31%, rgba(23, 21, 19, 0.2) 68%, rgba(23, 21, 19, 0.04) 100%), linear-gradient(0deg, rgba(23, 21, 19, 0.36), transparent 56%); content: ""; inset: 0; position: absolute; }
+	.hero-image { inset: 0; position: absolute; }
+	.hero-image img { height: 100%; object-fit: cover; object-position: center center; width: 100%; }
+	.hero-content { max-width: 42rem; position: relative; z-index: 1; }
+	.hero h1 { font-family: var(--display); font-size: clamp(4.4rem, 11vw, 10rem); font-weight: 700; letter-spacing: -0.09em; line-height: 0.78; margin: 1.35rem 0 1.8rem; text-transform: uppercase; }
+	.hero h1 span { color: var(--brass); font-size: 0.86em; }
+	.hero-kicker { color: var(--cream); font-family: var(--display); font-size: clamp(1.15rem, 2.2vw, 1.65rem); letter-spacing: 0.01em; margin: 0 0 0.8rem; }
+	.hero-copy { color: rgba(244, 235, 221, 0.78); font-size: 0.95rem; line-height: 1.65; margin: 0; max-width: 24rem; }
+	.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+	@media (max-width: 720px) { .hero { min-height: 720px; padding: 8rem 1.25rem 6rem; } .hero::after { background: linear-gradient(180deg, rgba(23, 21, 19, 0.08) 0%, rgba(23, 21, 19, 0.96) 72%); } .hero-image img { object-position: 57% center; } .hero h1 { font-size: clamp(4rem, 19vw, 6rem); margin-top: 1rem; } .hero-copy { font-size: 0.86rem; } }
+</style>

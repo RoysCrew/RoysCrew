@@ -1,0 +1,37 @@
+---
+---
+
+<header class="site-header is-visible">
+	<a class="brand" href="#top" aria-label="Roy's Crew BBQ home"><img class="brand-logo" src="/Logo/Roys%20Logo.avif" alt="Roy's Crew BBQ" /></a>
+	<nav class="desktop-nav" aria-label="Main navigation"><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#catering">Catering</a><a href="#visit">Visit Us</a></nav>
+	<div class="header-actions"><a class="header-order" href="https://roys-crew-bbq-woodland-park-2.cloveronline.com/menu/all" target="_blank" rel="noreferrer">Order online <span>↗</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span><b class="sr-only">Open menu</b></button></div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu"><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#catering">Catering</a><a href="#visit">Visit Us</a><a class="button button--ember" href="https://roys-crew-bbq-woodland-park-2.cloveronline.com/menu/all" target="_blank" rel="noreferrer">Order online</a></div>
+
+<script>
+	const toggle = document.querySelector('.menu-toggle');
+	const mobileMenu = document.querySelector('.mobile-menu');
+	const header = document.querySelector('.site-header');
+	let lastScrollY = window.scrollY;
+	const closeMenu = () => { toggle?.setAttribute('aria-expanded', 'false'); mobileMenu?.classList.remove('is-open'); document.body.classList.remove('menu-open'); };
+	toggle?.addEventListener('click', () => { const isOpen = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', String(!isOpen)); mobileMenu?.classList.toggle('is-open', !isOpen); document.body.classList.toggle('menu-open', !isOpen); });
+	document.querySelectorAll('.mobile-menu a').forEach((link) => link.addEventListener('click', closeMenu));
+	window.addEventListener('scroll', () => { const currentScrollY = window.scrollY; const scrollingUp = currentScrollY < lastScrollY; header?.classList.toggle('is-visible', currentScrollY < 80 || scrollingUp); lastScrollY = currentScrollY; }, { passive: true });
+</script>
+
+<style>
+	.site-header { align-items: center; display: flex; height: 5.4rem; justify-content: space-between; left: 0; padding: 0 5vw; position: fixed; right: 0; top: 0; transform: translateY(-110%); transition: background 180ms ease, transform 220ms ease; z-index: 10; }
+	.site-header.is-visible { background: var(--cream); transform: translateY(0); }
+	.brand { align-items: center; display: inline-flex; }
+	.brand-logo { display: block; height: auto; max-height: 3.35rem; mix-blend-mode: multiply; object-fit: contain; padding: 0.2rem 0.42rem; width: 10rem; }
+	.desktop-nav { display: flex; gap: clamp(1rem, 2.8vw, 3rem); margin-left: 8vw; }
+	.desktop-nav a { color: rgba(23, 21, 19, 0.76); font-size: 0.73rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 180ms ease; }
+	.desktop-nav a:hover { color: var(--ember); }
+	.header-actions { align-items: center; display: flex; gap: 1.35rem; }
+	.header-order { color: var(--ink); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+	.header-order span { color: var(--ember); font-size: 1rem; margin-left: 0.35rem; }
+	.menu-toggle, .mobile-menu { display: none; }
+	.sr-only { height: 1px; margin: -1px; overflow: hidden; position: absolute; width: 1px; clip: rect(0, 0, 0, 0); }
+	@media (max-width: 720px) { .site-header { height: 4.6rem; padding: 0 1.25rem; } .brand-logo { max-height: 2.65rem; width: 8.5rem; } .desktop-nav, .header-order { display: none; } .menu-toggle { background: transparent; border: 0; display: flex; flex-direction: column; gap: 5px; padding: 0.5rem 0; position: relative; z-index: 3; } .menu-toggle span { background: var(--ink); display: block; height: 1px; transition: transform 180ms ease; width: 1.65rem; } .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); } .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; } .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); } .mobile-menu { background: rgba(23, 21, 19, 0.94); border-top: 1px solid var(--ember); display: flex; flex-direction: column; inset: 0; opacity: 0; padding: 7rem 1.25rem 2rem; pointer-events: none; position: fixed; transform: translateY(-1rem); transition: opacity 180ms ease, transform 180ms ease; z-index: 2; } .mobile-menu.is-open { opacity: 1; pointer-events: auto; transform: translateY(0); } .mobile-menu a:not(.button) { border: 1px solid rgba(182, 83, 42, 0.72); color: var(--cream); display: flex; font-family: var(--display); font-size: clamp(2rem, 10vw, 3.5rem); margin-bottom: 0.75rem; padding: 1rem 1.1rem; } .mobile-menu a:not(.button):hover, .mobile-menu a:not(.button):focus-visible { background: rgba(182, 83, 42, 0.18); border-color: var(--ember); } .mobile-menu .button { margin-top: 1.25rem; width: fit-content; } body.menu-open { overflow: hidden; } }
+</style>

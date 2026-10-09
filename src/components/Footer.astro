@@ -1,0 +1,26 @@
+---
+---
+
+<footer class="site-footer">
+	<div class="footer-top"><div class="footer-brand"><span class="footer-wordmark"><strong>Roy's Crew</strong><b>BBQ</b></span></div><p class="footer-note">Slow-smoked with care<br />in Woodland Park, CO.</p><a class="button button--ember" href="https://roys-crew-bbq-woodland-park-2.cloveronline.com/menu/all" target="_blank" rel="noreferrer">Order online</a></div>
+	<div class="footer-bottom"><div class="footer-links"><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#catering">Catering</a><a href="#visit">Visit Us</a></div><div class="footer-contact"><span>Contact</span><a href="mailto:royscrewbbq@gmail.com">royscrewbbq@gmail.com</a><a href="tel:+17193236333">719-323-6333</a></div><div class="footer-social"><span>Social</span><a href="https://www.facebook.com/people/Roys-Crew-BBQ/100088425803885/" target="_blank" rel="noreferrer">Facebook</a></div></div>
+	<div class="footer-legal"><span>© {new Date().getFullYear()} Roy's Crew BBQ</span><span>Family-owned in Woodland Park, Colorado</span></div>
+</footer>
+
+<style>
+	.site-footer { background: var(--wood); padding: 4rem 5vw 1.5rem; }
+	.footer-top { align-items: center; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr auto; padding-bottom: 3.5rem; }
+	.footer-brand { align-items: center; display: flex; }
+	.footer-wordmark { align-items: baseline; display: inline-flex; font-family: var(--display); gap: 0.6rem; letter-spacing: -0.04em; line-height: 1; }
+	.footer-wordmark strong { font-size: 1.55rem; }
+	.footer-wordmark b { color: var(--brass); font-size: 0.75rem; letter-spacing: 0.16em; }
+	.footer-note { color: var(--cream-deep); font-size: 0.85rem; line-height: 1.5; }
+	.footer-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 2.5rem 0 4rem; }
+	.footer-links, .footer-contact, .footer-social { display: flex; flex-direction: column; gap: 0.7rem; }
+	.footer-links { flex-direction: row; flex-wrap: wrap; gap: 0.8rem 1.5rem; }
+	.footer-bottom a, .footer-legal, .footer-bottom span { color: rgba(244, 235, 221, 0.7); font-size: 0.76rem; }
+	.footer-bottom a:hover { color: var(--brass); }
+	.footer-contact span, .footer-social span { color: var(--brass); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+	.footer-legal { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding-top: 1.25rem; }
+	@media (max-width: 720px) { .site-footer { padding: 3rem 1.25rem 1.25rem; } .footer-top { align-items: start; display: flex; flex-direction: column; gap: 1.5rem; padding-bottom: 2.5rem; } .footer-note { margin: 0; } .footer-bottom { gap: 2rem; grid-template-columns: 1fr 1fr; padding: 2rem 0 3rem; } .footer-social { grid-column: span 2; } .footer-legal { flex-direction: column; gap: 0.5rem; } }
+</style>

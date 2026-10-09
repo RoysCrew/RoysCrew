@@ -1,17 +1,56 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import FeaturedFood from "../components/FeaturedFood.astro";
+import Menu from "../components/Menu.astro";
+import Story from "../components/Story.astro";
+import Catering from "../components/Catering.astro";
+import Visit from "../components/Visit.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<a class="skip-link" href="#main-content">Skip to content</a>
+	<Header />
+	<main id="main-content">
+		<Hero />
+		<section class="statement"><p class="eyebrow">What we make</p><h2>Slow-smoked.<br /><span>Scratch-made.</span><br />Family-owned.</h2><p class="statement-copy">We smoke the meat and make the sides at our family-owned barbecue restaurant in Woodland Park.</p></section>
+		<FeaturedFood />
+		<Menu />
+		<Story />
+		<Catering />
+		<Visit />
+		<section class="order-band" id="order"><p class="eyebrow">Order online</p><h2>Pick your favorites.</h2><a class="button button--ember" href="https://roys-crew-bbq-woodland-park-2.cloveronline.com/menu/all" target="_blank" rel="noreferrer">Order online</a></section>
+	</main>
+	<Footer />
+</BaseLayout>
+
+<script type="application/ld+json" is:inline>
+	{
+		"@context": "https://schema.org",
+		"@type": "Restaurant",
+		"name": "Roy's Crew BBQ",
+		"description": "Family-owned BBQ restaurant serving mesquite-smoked barbecue, comfort food, homemade sides and desserts, and catering.",
+		"servesCuisine": ["Barbecue", "American"],
+		"address": { "@type": "PostalAddress", "streetAddress": "720 Browning Ave", "addressLocality": "Woodland Park", "addressRegion": "CO", "postalCode": "80863", "addressCountry": "US" },
+		"telephone": "+1-719-323-6333",
+		"email": "royscrewbbq@gmail.com",
+		"openingHours": ["Mo-Sa 11:00-20:00"],
+		"url": "https://roys-crew-bbq-woodland-park-2.cloveronline.com/menu/all"
+	}
+</script>
+
+<style>
+	.statement { background: var(--ink); display: grid; gap: 3rem; grid-template-columns: 0.8fr 1.2fr 0.7fr; padding: 8rem 10vw; }
+	.statement .eyebrow { padding-top: 0.7rem; }
+	.statement h2 { font-family: var(--display); font-size: clamp(2.8rem, 6vw, 6rem); font-weight: 500; letter-spacing: -0.07em; line-height: 0.96; margin: 0; }
+	.statement h2 span { color: var(--ember); }
+	.statement-copy { align-self: end; color: rgba(244, 235, 221, 0.65); font-size: 0.95rem; line-height: 1.75; margin: 0; max-width: 17rem; }
+	.order-band { align-items: center; background: var(--ember); display: flex; flex-direction: column; padding: 7rem 1rem; text-align: center; }
+	.order-band .eyebrow { color: var(--cream); }
+	.order-band h2 { font-family: var(--display); font-size: clamp(3.2rem, 8vw, 7rem); letter-spacing: -0.08em; line-height: 0.9; margin: 1rem 0 2rem; }
+	.order-band .button--ember { background: var(--ink); }
+	.order-band .button--ember:hover { background: var(--cream); color: var(--ink); }
+	@media (max-width: 720px) { .statement { display: block; padding: 5rem 1.25rem; } .statement h2 { font-size: clamp(2.8rem, 14vw, 4.5rem); margin: 1.5rem 0 2rem; } .statement-copy { max-width: 20rem; } .order-band { padding: 5rem 1rem; } }
+</style>
