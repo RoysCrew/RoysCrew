@@ -1,0 +1,23 @@
+---
+const socials = [
+	{ label: "Facebook", href: "https://www.facebook.com/people/Roys-Crew-BBQ/100088425803885/" },
+	{ label: "Instagram", href: "https://www.instagram.com/royscrewbbq?mdxt=MTg3NHloanR0b3RsYQ==" },
+];
+---
+
+<section class="social-follow" id="social-follow" aria-labelledby="social-follow-title">
+	<p class="eyebrow">Stay in the loop</p>
+	<h2 id="social-follow-title">Follow us on social media</h2>
+	<div class="social-follow-buttons">
+		{socials.map((social) => <a class="button button--outline" href={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}
+	</div>
+</section>
+
+<style>
+	.social-follow { align-items: center; background: var(--wood); border-top: 1px solid var(--line); display: flex; flex-direction: column; padding: 3.5rem 1.25rem; text-align: center; }
+	.social-follow .eyebrow { margin: 0 0 0.6rem; }
+	.social-follow h2 { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 500; margin: 0 0 1.4rem; }
+	.social-follow-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+	.social-follow-buttons .button { min-width: 9rem; }
+	@media (max-width: 720px) { .social-follow { padding: 3rem 1.25rem; } }
+</style>
